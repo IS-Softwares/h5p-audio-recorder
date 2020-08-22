@@ -1,12 +1,12 @@
 {
-  "title": "Audio Recorder",
-  "description": "Record audio and download it",
-  "machineName": "H5P.AudioRecorder",
+  "title": "InHub Audio Recorder",
+  "description": "Record audio and save it",
+  "machineName": "H5P.InHubAudioRecorder",
   "majorVersion": 1,
-  "minorVersion": 0,
-  "patchVersion": 18,
+  "minorVersion": 1,
+  "patchVersion": 0,
   "runnable": 1,
-  "author": "Joubel",
+  "author": "Joubel, InHub",
   "license": "MIT",
   "embedTypes": [
     "iframe"

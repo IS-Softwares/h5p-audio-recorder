@@ -15,9 +15,9 @@
 
     <timer ref="timer" v-bind:stopped="state !== 'recording'" v-if="state !== 'unsupported' && state !== 'done' && state !== 'insecure-not-allowed'"></timer>
 
-    <div v-if="state !== 'blocked' && state !== 'unsupported' && state === 'done'" class="h5p-audio-recorder-download">
+    <!-- <div v-if="state !== 'blocked' && state !== 'unsupported' && state === 'done'" class="h5p-audio-recorder-download">
       {{ l10n.downloadRecording }}
-    </div>
+    </div> -->
 
     <div class="button-row">
       <div class="button-row-double">
@@ -57,7 +57,7 @@
         </button>
       </div>
 
-      <span class="button-row-left">
+      <!-- <span class="button-row-left">
         <a class="button download"
            ref="button-download"
            v-if="state === 'done'"
@@ -66,7 +66,7 @@
           <span class="icon-download"></span>
           {{ l10n.download }}
         </a>
-      </span>
+      </span> -->
 
       <span class="button-row-right">
         <button class="button retry"

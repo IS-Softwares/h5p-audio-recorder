@@ -70,12 +70,37 @@ export default class {
     viewModel.$on('recording', () => {
       recorder.start();
     });
+    
+    var toUnix = function (date) {
+      return Math.round(date.getTime() / 1000);
+    };
 
     viewModel.$on('done', () => {
       recorder.stop();
-      recorder.getWavURL().then(url => {
+      recorder.getWav().then(blob => {
         recorder.releaseMic();
-        viewModel.audioSrc = url;
+        viewModel.audioSrc = URL.createObjectURL(blob);
+
+        if (H5PIntegration.postUserStatistics === true) {
+          var wavFile = new File([blob], 'file.wav');
+
+          var formData = new FormData();
+
+          formData.append('file', wavFile);
+          formData.append('contentId', contentId);
+          formData.append('score', 0);
+          formData.append('maxScore', 0);
+          formData.append('opened', toUnix(H5P.opened[contentId]));
+          formData.append('finished', toUnix(new Date()));
+
+          H5P.jQuery.ajax({
+            url: H5PIntegration.ajax.setFinished, 
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+          });
+        }
 
         // Create a filename using the title
         if(params.title && params.title.length > 0) {

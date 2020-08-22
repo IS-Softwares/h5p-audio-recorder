@@ -87,12 +87,12 @@ export default class Recorder extends H5P.EventDispatcher {
    *
    * @return {Promise}
    */
-  getWavURL() {
+  getWav() {
     this.stop();
 
     const loadAudioUrl = new Promise((resolve, reject) => {
       this.once('wav-delivered', e => {
-        resolve(URL.createObjectURL(e.data));
+        resolve(e.data);
       });
 
       this.once('worker-error', e => {

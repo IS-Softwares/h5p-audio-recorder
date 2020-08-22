@@ -1,4 +1,6 @@
-# H5P Audio Recorder
+# H5P InHub Audio Recorder
+
+This is a fork of [H5P Audio Recorder](https://github.com/h5p/h5p-audio-recorder) that allows to save the recording on the server instead of only allow to download the recording, you will need to modify the setFinished event on your back-end to save the result file and register it on the database, I suggest you to add a file column on the h5p_results table.
 
 ## Getting started
 

@@ -1,3 +1,3 @@
 // Load library
 H5P = H5P || {};
-H5P.AudioRecorder = require('../app').default;
+H5P.InHubAudioRecorder = require('../app').default;
