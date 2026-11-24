@@ -35,7 +35,7 @@
     "style-loader": "^0.13.2",
     "timer-machine": "^1.1.0",
     "url-loader": "^0.5.8",
-    "vue-loader": "^11.2.0",
+    "vue-loader": "^17.4.2",
     "vue-template-compiler": "^2.2.4",
     "webpack": "^2.2.1"
   },
